@@ -6,9 +6,8 @@ Le jeu de Takuzu également connu sous le nom de Binairo ou Binaire,est un jeu d
 3. Deux lignes ou deux colonnes identiques sont interdites dans la même grille.
 
 Exemple, passant d'une grille partiellement pré-remplie à une grille remplie :
-![alt text](takuzu.png)
 <div align="center">
-  <img src="takuzu.png" width="600">
+  <img src="takuzu.png" width="400">
 </div>
 
 
