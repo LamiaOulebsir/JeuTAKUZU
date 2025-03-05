@@ -5,6 +5,6 @@ Le jeu de Takuzu également connu sous le nom de Binairo ou Binaire,est un jeu d
 2. Il est interdit d’avoir trois 0 ou trois 1 consécutifs dans une ligne ou une colonne.
 3. Deux lignes ou deux colonnes identiques sont interdites dans la même grille.
 
-Exemple, passant d'une grille partiellement pré-remplie à une grille remplie (Wikipedia) :
-![alt text](https://upload.wikimedia.org/wikipedia/commons/0/03/Takuzu_unsolved_grid.svg)
-![alt text](https://upload.wikimedia.org/wikipedia/commons/6/68/Takuzu_solved_grid.svg )
+Exemple, passant d'une grille partiellement pré-remplie à une grille remplie :
+![alt text](takuzu.png)
+
