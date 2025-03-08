@@ -51,3 +51,7 @@ bool verifier_grille(NumericMatrix matrice) {
 }
 ')
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1a2ca8badc6e55e92e7b5cf102d61d97efded27d
