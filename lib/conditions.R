@@ -51,4 +51,3 @@ bool verifier_grille(NumericMatrix matrice) {
 }
 ')
 
->>>>>>> 5b870ad (Modification de app.R)
