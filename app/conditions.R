@@ -1,7 +1,0 @@
-library(Rcpp)
-
-cppFunction('
-
-')
-
-
