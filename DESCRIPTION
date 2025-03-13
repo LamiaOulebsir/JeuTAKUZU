@@ -8,8 +8,10 @@ Description: A package for creating and playing the Takuzu (Binairo) puzzle game
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports:
-    shiny
-    shinydashboard
+    shiny,
+    shinydashboard,
+    Rcpp
+LinkingTo: 
     Rcpp
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.0.0
+RoxygenNote: 7.3.2

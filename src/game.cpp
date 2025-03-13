@@ -24,7 +24,7 @@ bool check_consecutive(NumericMatrix mat, int n) {
 
   return true;  // Pas de trois consécutifs
 }
-")
+
 
 
 // Fonction pour vérifier si il y a le meme nombre de 0 et de 1 dans chaque ligne et dans chaque colonne.
