@@ -2,6 +2,9 @@
 
 using namespace Rcpp;
 
+// [[Rcpp::export]]
+
+
 // Fonction pour vérifier si il y a trois 0 ou 1 consécutifs dans la matrice
 bool check_consecutive(NumericMatrix mat, int n) {
   // Vérifie les lignes
