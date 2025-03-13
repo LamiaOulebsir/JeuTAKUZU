@@ -11,7 +11,7 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // check_consecutive
-// Fonction pour vérifier si il y a trois 0 ou 1 consécutifs dans la matrice bool check_consecutive(NumericMatrix mat, int n);
+bool check_consecutive(NumericMatrix mat, int n);
 RcppExport SEXP _JeuTAKUZU_check_consecutive(SEXP matSEXP, SEXP nSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
