@@ -21,6 +21,7 @@ check_consecutive <- function(mat, n) {
 #' @return TRUE si la règle est respectée, FALSE sinon
 #' @export
 
+<<<<<<< HEAD
 check_balance <- function(mat, n) {
   .Call("_JeuTAKUZU_check_balance", mat, n, PACKAGE = "JeuTAKUZU")
 }
@@ -28,3 +29,19 @@ check_balance <- function(mat, n) {
 
 
 
+=======
+
+
+
+#' Lancer l'application Shiny Takuzu
+#' @export
+run_app <- function() {
+  app_dir <- system.file("app", package = "JeuTAKUZU")
+  if (app_dir == "") {
+    stop("L'application Shiny n'a pas été trouvée ! Réinstallez le package.", call. = FALSE)
+  }
+  shiny::runApp(app_dir, launch.browser = TRUE)
+}
+
+
+>>>>>>> 55375c03c3074fe83fd98f5168b0951309179983

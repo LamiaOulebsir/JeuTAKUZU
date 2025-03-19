@@ -27,6 +27,13 @@ bool check_consecutive(NumericMatrix mat, int n) {
 }
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 55375c03c3074fe83fd98f5168b0951309179983
 // Fonction pour vérifier si il y a le meme nombre de 0 et de 1 dans chaque ligne et dans chaque colonne.
 
 // [[Rcpp::export]]
