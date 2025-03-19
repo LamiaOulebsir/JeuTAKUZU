@@ -21,3 +21,16 @@ check_consecutive <- function(mat, n) {
 #' @return TRUE si la règle est respectée, FALSE sinon
 #' @export
 
+
+
+#' Lancer l'application Shiny Takuzu
+#' @export
+run_app <- function() {
+  app_dir <- system.file("app", package = "JeuTAKUZU")
+  if (app_dir == "") {
+    stop("L'application Shiny n'a pas été trouvée ! Réinstallez le package.", call. = FALSE)
+  }
+  shiny::runApp(app_dir, launch.browser = TRUE)
+}
+
+
