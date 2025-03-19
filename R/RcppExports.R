@@ -5,3 +5,7 @@ check_consecutive <- function(mat, n) {
     .Call(`_JeuTAKUZU_check_consecutive`, mat, n)
 }
 
+check_balance <- function(mat, n) {
+    .Call(`_JeuTAKUZU_check_balance`, mat, n)
+}
+
