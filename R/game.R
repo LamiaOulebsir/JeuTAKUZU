@@ -21,7 +21,7 @@ check_consecutive <- function(mat, n) {
 #' @return TRUE si la règle est respectée, FALSE sinon
 #' @export
 
-<<<<<<< HEAD
+
 check_balance <- function(mat, n) {
   .Call("_JeuTAKUZU_check_balance", mat, n, PACKAGE = "JeuTAKUZU")
 }
@@ -29,7 +29,6 @@ check_balance <- function(mat, n) {
 
 
 
-=======
 
 
 
@@ -44,4 +43,4 @@ run_app <- function() {
 }
 
 
->>>>>>> 55375c03c3074fe83fd98f5168b0951309179983
+
