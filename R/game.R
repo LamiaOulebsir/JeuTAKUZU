@@ -22,6 +22,14 @@ check_consecutive <- function(mat, n) {
 #' @export
 
 
+check_balance <- function(mat, n) {
+  .Call("_JeuTAKUZU_check_balance", mat, n, PACKAGE = "JeuTAKUZU")
+}
+
+
+
+
+
 
 
 #' Lancer l'application Shiny Takuzu
@@ -33,5 +41,6 @@ run_app <- function() {
   }
   shiny::runApp(app_dir, launch.browser = TRUE)
 }
+
 
 
