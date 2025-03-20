@@ -22,7 +22,7 @@ server <- function(input, output, session) {
   btn_values <- reactiveValues() # stocker la matrice de boutons
 
   # Initialisation de la matrice lorsqu'on appuie sur "Démarrer le jeu"
-  ObserEvent(input$start, {
+  ObserveEvent(input$start, {
     n <- input$n
     btn_values$matrix <- matric(sample(1,0,""),n*n ,replace =TRUE)
 
