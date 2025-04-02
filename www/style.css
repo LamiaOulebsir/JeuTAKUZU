@@ -1,0 +1,30 @@
+/* Fond rose */
+body {
+  background-color: #ff66b2;
+}
+
+/* Style des boutons dans la grille */
+.grid-container button {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Effet au survol */
+.grid-container button:hover {
+  transform: scale(1.1);
+}
+
+/* Boutons avec valeur 0 */
+.btn-0 {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+/* Boutons avec valeur 1 */
+.btn-1 {
+  background-color: #4dabf7;
+  color: white;
+}
