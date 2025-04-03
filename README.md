@@ -19,13 +19,14 @@ Pour récupérer le projet sur votre machine locale, utilisez la commande suivan
 ```sh
 git clone https://github.com/LamiaOulebsir/JeuTAKUZU.git
 cd JeuTAKUZU
-
+```
 ### 2. Charger la librairie
 
-```sh
+```r
 library(JeuTAKUZU)
+```
 
 ### 3. Lancer l'application
 
-```sh
+```r
 run_app()
