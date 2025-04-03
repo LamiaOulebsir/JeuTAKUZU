@@ -2,35 +2,35 @@
 
 ```bash
 JeuTAKUZU/  
-│── R/                     # Fonctions R du package  
-│   ├── RcppExports.R      # Fonctions exportées via Rcpp  
-│   ├── game.R             # Code principal du jeu  
+│── R/                    
+│   ├── RcppExports.R       
+│   ├── game.R              
 │  
-│── inst/                  # Contient les fichiers de l'application Shiny  
-│   ├── app/               # Application Shiny  
-│       ├── www/           # Contient les fichiers CSS et autres ressources  
-│       │   ├── style.css  # Feuille de style CSS  
-│       ├── app.R          # Script principal de l'application Shiny  
+│── inst/                  
+│   ├── app/               
+│       ├── www/           
+│       │   ├── style.css  
+│       ├── app.R            
 │  
-│── man/                   # Documentation des fonctions R  
-│   ├── check_balance.Rd   # Documentation pour la fonction check_balance  
-│   ├── check_consecutive.Rd   # Documentation pour check_consecutive  
-│   ├── check_no_repeated.Rd   # Documentation pour check_no_repeated  
-│   ├── run_app.Rd         # Documentation pour run_app  
+│── man/                   
+│   ├── check_balance.Rd   
+│   ├── check_consecutive.Rd    
+│   ├── check_no_repeated.Rd     
+│   ├── run_app.Rd          
 │  
-│── src/                   # Code source en C++ (Rcpp)  
-│   ├── JeuTAKUZU.so       # Fichier binaire compilé  
-│   ├── RcppExports.cpp    # Exports Rcpp pour l’interfaçage avec R  
-│   ├── RcppExports.o      # Fichier objet compilé  
-│   ├── game.cpp           # Code C++ principal du jeu  
-│   ├── game.o             # Fichier objet compilé  
-│   ├── init.c             # Initialisation du package en C  
-│   ├── init.o             # Fichier objet compilé  
+│── src/                    
+│   ├── JeuTAKUZU.so       
+│   ├── RcppExports.cpp      
+│   ├── RcppExports.o        
+│   ├── game.cpp           
+│   ├── game.o             
+│   ├── init.c               
+│   ├── init.o             
 │  
-│── .Rbuildignore          # Liste des fichiers à ignorer lors de la construction du package  
-│── .gitignore             # Fichiers à ignorer dans Git  
-│── DESCRIPTION            # Métadonnées du package R  
-│── JeuTAKUZU.Rproj        # Fichier de projet RStudio  
-│── NAMESPACE              # Liste des fonctions exportées du package  
-│── README.md              # Documentation principale du dépôt  
-│── test.R                 # Script de test  
+│──.Rbuildignore          
+│── .gitignore             
+│── DESCRIPTION            
+│── JeuTAKUZU.Rproj         
+│── NAMESPACE               
+│── README.md                
+│── test.R                 
