@@ -41,6 +41,37 @@ server <- function(input, output, session) {
   })
 
 
+  # Observer chaque bouton
+  observe({
+    lapply(1:(input$n * input$n), function(i) {
+      observeEvent(input[[paste0("btn_", i)]], {
+        #print(paste("Bouton cliqué : ", i))  # Message dans la console
+
+        # Alterner la valeur du bouton (0 -> 1 ou 1 -> 0)
+        current_value <- btn_values$matrix[i]
+
+        new_value <- if (current_value == "") {
+          sample(c(0,1),1)
+        }else if (current_value == 0){
+          new_value <- 1
+        }else{
+          new_value <- 0
+        }
+
+
+        # Créer une matrice temporaire avec la nouvelle valeur
+        temp_matrix <- btn_values$matrix
+        temp_matrix[i] <- new_value
+
+        btn_values$matrix <- temp_matrix  # Mettre à jour la matrice
+        #updateActionButton(session, paste0("btn_", i), label = as.character(new_value))  # Mettre à jour l'affichage du bouton
+      })
+
+    })
+  })
+
+
+
 }
 
 # Lancer l'application
