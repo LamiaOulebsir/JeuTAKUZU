@@ -13,7 +13,7 @@ ui <- fluidPage(
   #tags$head(tags$style(HTML(custom_css))),
 
   # Lien vers le fichier CSS externe
-  tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "WWW/style.css")),
+  tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "style.css")),
 
   titlePanel("Jeu Takuzu"),
 
