@@ -6,7 +6,7 @@ ui <- fluidPage(
 
   sidebarLayout(
     sidebarPanel(
-      numericInput("n", "Taille de la grille", 5, min = 3, max = 10),
+      numericInput("n", "Taille de la grille", 6, min = 3, max = 10),
       actionButton("start", "Démarrer le jeu"),
       actionButton("Check" ,"Check")  # Vérifier si le joueur a gangné ou pas
     ),
@@ -24,7 +24,7 @@ server <- function(input, output, session) {
   # Initialisation de la matrice lorsqu'on appuie sur "Démarrer le jeu"
   observeEvent(input$start, {
     n <- input$n
-    btn_values$matrix <- matric(sample(1,0,""),n*n ,replace =TRUE)
+    btn_values$matrix <- matrix(sample(c(1,0,""),n*n,replace =TRUE))
 
   })
 
