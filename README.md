@@ -10,3 +10,12 @@ Exemple, passant d'une grille partiellement pré-remplie à une grille remplie :
   <img src="takuzu.png" width="400">
 </div>
 
+
+## Installation et exécution
+
+### 1. Cloner le dépôt
+Pour récupérer le projet sur votre machine locale, utilisez la commande suivante dans un terminal :
+
+```sh
+git clone https://github.com/LamiaOulebsir/JeuTAKUZU.git
+cd JeuTAKUZU
