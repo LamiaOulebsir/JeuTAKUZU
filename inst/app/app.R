@@ -12,7 +12,8 @@ ui <- fluidPage(
     ),
 
     mainPanel(
-      uiOutput("button_grid")
+      uiOutput("button_grid"),
+      textOutput("result")
     )
   )
 )
