@@ -2,6 +2,7 @@
 
 export(check_balance)
 export(check_consecutive)
+export(check_no_repeated)
 export(run_app)
 importFrom(Rcpp,sourceCpp)
 useDynLib(JeuTAKUZU, .registration = TRUE)

@@ -9,3 +9,7 @@ check_balance <- function(mat, n) {
     .Call(`_JeuTAKUZU_check_balance`, mat, n)
 }
 
+check_no_repeated <- function(mat, n) {
+    .Call(`_JeuTAKUZU_check_no_repeated`, mat, n)
+}
+

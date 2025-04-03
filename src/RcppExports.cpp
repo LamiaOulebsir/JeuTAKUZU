@@ -34,3 +34,15 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// check_no_repeated
+bool check_no_repeated(NumericMatrix mat, int n);
+RcppExport SEXP _JeuTAKUZU_check_no_repeated(SEXP matSEXP, SEXP nSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< NumericMatrix >::type mat(matSEXP);
+    Rcpp::traits::input_parameter< int >::type n(nSEXP);
+    rcpp_result_gen = Rcpp::wrap(check_no_repeated(mat, n));
+    return rcpp_result_gen;
+END_RCPP
+}

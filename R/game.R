@@ -20,14 +20,24 @@ check_consecutive <- function(mat, n) {
 #' @param n La taille de la grille (n x n)
 #' @return TRUE si la règle est respectée, FALSE sinon
 #' @export
+
+
 check_balance <- function(mat, n) {
   .Call("_JeuTAKUZU_check_balance", mat, n, PACKAGE = "JeuTAKUZU")
 }
 
+#'vérifier si les lignes et les colonne sont identiques
+#' @param mat Une matrice de Takuzu
+#' @param n La taille de la grille (n x n)
+#' @return TRUE si la règle est respectée, FALSE sinon
+#' @export
+
+check_no_repeated <- function(mat, n) {
+  .Call("_JeuTAKUZU_check_no_repeated", mat, n, PACKAGE = "JeuTAKUZU")
+}
 
 
-
-# Lancer l'application Shiny Takuzu
+#' Lancer l'application Shiny Takuzu
 #' @export
 run_app <- function() {
   app_dir <- system.file("app", package = "JeuTAKUZU")

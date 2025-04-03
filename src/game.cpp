@@ -62,5 +62,41 @@ bool check_balance(NumericMatrix mat, int n) {
   return true;  // Si tout est équilibré
 }
 
+// les colonnes et les lignes ne sont pas identiques
 
+// [[Rcpp::export]]
+bool check_no_repeated(NumericMatrix mat, int n) {
+  // Vérifie les lignes
+  for (int i = 0; i < n; ++i) {
+    for (int j = i + 1; j < n; ++j) {
+      bool is_identical = true;
+      for (int k = 0; k < n; ++k) {
+        if (mat(i, k) != mat(j, k)) {
+          is_identical = false;
+          break;
+        }
+      }
+      if (is_identical) {
+        return false;  // Les lignes sont identiques, ce n'est pas valide
+      }
+    }
+  }
 
+  // Vérifie les colonnes
+  for (int j = 0; j < n; ++j) {
+    for (int k = j + 1; k < n; ++k) {
+      bool is_identical = true;
+      for (int i = 0; i < n; ++i) {
+        if (mat(i, j) != mat(i, k)) {
+          is_identical = false;
+          break;
+        }
+      }
+      if (is_identical) {
+        return false;  // Les colonnes sont identiques, ce n'est pas valide
+      }
+    }
+  }
+
+  return true;  // Pas de lignes ni de colonnes identiques
+}
