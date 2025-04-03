@@ -6,14 +6,18 @@ library(shinyjs)
 
 
 
+
 ui <- fluidPage(
   #theme = shinytheme("flatly"),
   #useShinyjs(),
   #tags$head(tags$style(HTML(custom_css))),
-  titlePanel("Jeu Takuzu"),
 
   # Lien vers le fichier CSS externe
-  tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "www/style.css")),
+  tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "WWW/style.css")),
+
+  titlePanel("Jeu Takuzu"),
+
+
 
   sidebarLayout(
     sidebarPanel(
