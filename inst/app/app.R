@@ -22,8 +22,8 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       numericInput("n", "Taille de la grille", 6, min = 3, max = 10),
-      actionButton("start", "Démarrer le jeu"),
-      actionButton("Check" ,"Check")  # Vérifier si le joueur a gangné ou pas
+      actionButton("start", "Démarrer le jeu",icon = icon("play"), class = "btn-success"),
+      actionButton("Check" ,"Check",class = "btn-primary")  # Vérifier si le joueur a gangné ou pas
     ),
 
     mainPanel(
