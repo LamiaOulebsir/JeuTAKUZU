@@ -12,8 +12,7 @@ ui <- fluidPage(
     ),
 
     mainPanel(
-      uiOutput("button_grid"),
-      textOutput("result")
+      uiOutput("button_grid")
     )
   )
 )
@@ -25,7 +24,7 @@ server <- function(input, output, session) {
   # Initialisation de la matrice lorsqu'on appuie sur "Démarrer le jeu"
   observeEvent(input$start, {
     n <- input$n
-    btn_values$matrix <- matrix(sample(1,0,""),n*n ,replace =TRUE)
+    btn_values$matrix <- matric(sample(1,0,""),n*n ,replace =TRUE)
 
   })
 
@@ -71,10 +70,9 @@ server <- function(input, output, session) {
     })
   })
 
-
   # Vérification des règles lorsqu'on appuie sur "Vérifier les règles"
-    observeEvent(input$Check, {
-      n <- input$n
+  observeEvent(input$Check, {
+    n <- input$n
 
     # Vérifier si toutes les cases sont remplies (pas de "")
     if (any(btn_values$matrix == "")) {
@@ -85,7 +83,7 @@ server <- function(input, output, session) {
 
 
 
-      if (check_consecutive(btn_values$matrix, n) && check_balance(btn_values$matrix, n)) {
+      if (check_consecutive(btn_values$matrix, n) && check_balance(btn_values$matrix, n) && check_no_repeated(btn_values$matrix, n)) {
         #output$result <- renderText("Vous avez gagné ! Les règles sont respectées.")
         showNotification("Bravo ! Vous avez gagné !", type = "message")
       } else {
@@ -94,7 +92,6 @@ server <- function(input, output, session) {
       }
     }
   })
-
 
 
 }
