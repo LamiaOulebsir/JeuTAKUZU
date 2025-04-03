@@ -12,7 +12,8 @@ ui <- fluidPage(
     ),
 
     mainPanel(
-      uiOutput("button_grid")
+      uiOutput("button_grid"),
+      textOutput("result")
     )
   )
 )
@@ -24,7 +25,7 @@ server <- function(input, output, session) {
   # Initialisation de la matrice lorsqu'on appuie sur "Démarrer le jeu"
   observeEvent(input$start, {
     n <- input$n
-    btn_values$matrix <- matric(sample(1,0,""),n*n ,replace =TRUE)
+    btn_values$matrix <- matrix(sample(1,0,""),n*n ,replace =TRUE)
 
   })
 
@@ -68,6 +69,30 @@ server <- function(input, output, session) {
       })
 
     })
+  })
+
+
+  # Vérification des règles lorsqu'on appuie sur "Vérifier les règles"
+    observeEvent(input$Check, {
+      n <- input$n
+
+    # Vérifier si toutes les cases sont remplies (pas de "")
+    if (any(btn_values$matrix == "")) {
+      output$result <- renderText("Veuillez remplir toutes les cases avant de vérifier.")
+    } else {
+      # Convertir la matrice en numérique pour éviter les erreurs de type
+      btn_values$matrix <- matrix(as.numeric(btn_values$matrix), nrow = n, ncol = n)
+
+
+
+      if (check_consecutive(btn_values$matrix, n) && check_balance(btn_values$matrix, n)) {
+        #output$result <- renderText("Vous avez gagné ! Les règles sont respectées.")
+        showNotification("Bravo ! Vous avez gagné !", type = "message")
+      } else {
+        #output$result <- renderText("Désolé, vous avez perdu. Les règles ne sont pas respectées.")
+        showNotification("Dommage, les règles ne sont pas respectées.", type = "error")
+      }
+    }
   })
 
 
