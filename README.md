@@ -13,20 +13,20 @@ Exemple, passant d'une grille partiellement pré-remplie à une grille remplie :
 
 ## Installation et exécution
 
-### 1. Cloner le dépôt
+### Cloner le dépôt
 Pour récupérer le projet sur votre machine locale, utilisez la commande suivante dans un terminal :
 
 ```sh
 git clone https://github.com/LamiaOulebsir/JeuTAKUZU.git
 cd JeuTAKUZU
 ```
-### 2. Charger la librairie
+### Charger la librairie
 
 ```r
 library(JeuTAKUZU)
 ```
 
-### 3. Lancer l'application
+### Lancer l'application
 
 ```r
 run_app()
