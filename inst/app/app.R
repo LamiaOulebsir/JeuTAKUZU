@@ -100,11 +100,11 @@ server <- function(input, output, session) {
 
 
       if (check_consecutive(btn_values$matrix, n) && check_balance(btn_values$matrix, n) && check_no_repeated(btn_values$matrix, n)) {
-        #output$result <- renderText("Vous avez gagné ! Les règles sont respectées.")
-        showNotification("Bravo ! Vous avez gagné !", type = "message")
+        #output$result <- renderText("🎉 Bravo !Vous avez gagné 😂 " ,type ="message")
+        showNotification("🎉 Bravo !Vous avez gagné 😂 " ,type ="message")
       } else {
         #output$result <- renderText("Désolé, vous avez perdu. Les règles ne sont pas respectées.")
-        showNotification("Dommage, les règles ne sont pas respectées.", type = "error")
+        showNotification("😢 Dommage, les règles ne sont pas respectées.", type = "error")
       }
     }
   })
