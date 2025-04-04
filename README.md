@@ -14,13 +14,13 @@ Exemple, passant d'une grille partiellement pré-remplie à une grille remplie :
 ## Installation et exécution
 
 ### Cloner le dépôt
-Pour récupérer le projet sur votre machine locale, utilisez la commande suivante dans un terminal :
+Pour récupérer le projet sur votre machine locale, ouvrez R-studio et utilisez cette commande suivante dans le terminal :
 
 ```sh
 git clone https://github.com/LamiaOulebsir/JeuTAKUZU.git
-cd JeuTAKUZU
 ```
 ### Charger la librairie
+Dans la console R
 
 ```r
 library(JeuTAKUZU)
