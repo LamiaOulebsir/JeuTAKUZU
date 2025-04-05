@@ -26,18 +26,14 @@ check_balance <- function(mat, n) {
 
 # UI Shiny
 ui <- fluidPage(
-  #theme = shinytheme("flatly"),
-  #useShinyjs(),
-  #tags$head(tags$style(HTML(custom_css))),
   tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "style.css")),
-
-  titlePanel("Jeu Takuzu"),
+  titlePanel("🧠 Jeu Takuzu"),
   sidebarLayout(
     sidebarPanel(
       numericInput("n", "Taille de la grille", 6, min = 4, max = 10),
-      actionButton("start", "Démarrer le jeu", icon = icon("play"), class = "btn-success"),
-      actionButton("Check", "Vérifier les règles", class = "btn-primary"),
-      actionButton("rules", "Règles du jeu", class = "btn-info")
+      actionButton("start", "Démarrer le jeu 🚀", icon = icon("play"), class = "btn-success"),
+      actionButton("Check", "Vérifier les règles ✅", class = "btn-primary"),
+      actionButton("rules", "Règles du jeu 📖", class = "btn-info")
     ),
     mainPanel(
       uiOutput("button_grid"),
@@ -98,7 +94,7 @@ server <- function(input, output, session) {
 
     if (any(btn_values$matrix == "")) {
       output$result <- renderText("Veuillez remplir toutes les cases avant de vérifier.")
-      showNotification("Veuillez remplir toutes les cases avant de vérifier.", type = "warning")
+      showNotification("⚠️ Veuillez remplir toutes les cases avant de vérifier !", type = "warning")
     } else {
       mat <- matrix(as.numeric(btn_values$matrix), nrow = n, ncol = n)
 
@@ -109,13 +105,13 @@ server <- function(input, output, session) {
       )
 
       if (all(unlist(check_result))) {
-        showNotification("Bravo ! Vous avez gagné !", type = "message")
-        output$result <- renderText("Toutes les règles sont respectées. Bien joué !")
+        showNotification("🎉 Bravo ! Vous avez gagné ! 🏆", type = "message")
+        output$result <- renderText("Toutes les règles sont respectées. Bien joué ! 🎯")
       } else {
-        msg <- "Règles non respectées :"
-        if (!check_result$consecutive) msg <- paste0(msg, "\n- Pas plus de deux 0 ou 1 consécutifs.")
-        if (!check_result$balance) msg <- paste0(msg, "\n- Nombre égal de 0 et 1 non respecté dans au moins une ligne ou colonne.")
-        if (!check_result$uniqueness) msg <- paste0(msg, "\n- Des lignes ou colonnes identiques ont été trouvées.")
+        msg <- "❌ Règles non respectées :"
+        if (!check_result$consecutive) msg <- paste0(msg, "\n⚠️ Pas plus de deux 0 ou 1 consécutifs.")
+        if (!check_result$balance) msg <- paste0(msg, "\n⚖️ Nombre égal de 0 et 1 non respecté.")
+        if (!check_result$uniqueness) msg <- paste0(msg, "\n🔁 Lignes ou colonnes identiques détectées.")
 
         showNotification(msg, type = "error", duration = 10)
         output$result <- renderText(msg)
@@ -125,23 +121,14 @@ server <- function(input, output, session) {
 
   observeEvent(input$rules, {
     showModal(modalDialog(
-      title = tags$h3("Règles du jeu Takuzu", style = "text-align: center; color: #ff6b6b; font-weight: bold;"),
+      title = tags$h3("📜 Règles du jeu Takuzu", style = "text-align: center; color: #ff6b6b; font-weight: bold;"),
       HTML(
         "<div style='font-size: 18px; line-height: 1.6; color: #4a4a4a; text-align: center;'>
         <ul>
-          <li><strong style='color: #ff6b6b;'>Équilibre</strong> : Chaque ligne et chaque colonne doit contenir le même nombre de
-          <strong style='color: #4dabf7;'>0</strong> et de
-          <strong style='color: #4dabf7;'>1</strong>.</li>
-
-          <li><strong style='color: #ff6b6b;'>Consécutifs</strong> : Il ne doit pas y avoir plus de deux
-          <strong style='color: #4dabf7;'>0</strong> ou
-          <strong style='color: #4dabf7;'>1</strong> consécutifs dans une ligne ou une colonne.</li>
-
-          <li><strong style='color: #ff6b6b;'>Remplissage</strong> : Les cases doivent être remplies uniquement avec les chiffres
-          <strong style='color: #4dabf7;'>0</strong> et
-          <strong style='color: #4dabf7;'>1</strong>.</li>
-
-          <li><strong style='color: #ff6b6b;'>Unicité</strong> : Aucune ligne ou colonne ne doit être identique à une autre.</li>
+          <li>⚖️ <strong style='color: #ff6b6b;'>Équilibre</strong> : chaque ligne et chaque colonne doit contenir autant de <strong style='color: #4dabf7;'>0</strong> que de <strong style='color: #4dabf7;'>1</strong>.</li>
+          <li>🚫 <strong style='color: #ff6b6b;'>Consécutifs</strong> : pas plus de deux <strong style='color: #4dabf7;'>0</strong> ou <strong style='color: #4dabf7;'>1</strong> consécutifs.</li>
+          <li>🔢 <strong style='color: #ff6b6b;'>Remplissage</strong> : utilisez uniquement des <strong style='color: #4dabf7;'>0</strong> et des <strong style='color: #4dabf7;'>1</strong>.</li>
+          <li>🆚 <strong style='color: #ff6b6b;'>Unicité</strong> : aucune ligne ou colonne ne doit être identique.</li>
         </ul>
       </div>"
       ),
