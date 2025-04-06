@@ -19,6 +19,12 @@ Pour récupérer le projet sur votre machine locale, ouvrez R-studio et utilisez
 ```sh
 git clone https://github.com/LamiaOulebsir/JeuTAKUZU.git
 ```
+### Installer les packages necessaires
+
+```r
+install.packages(c("shiny", "shinyjs"))
+```
+
 ### Charger la librairie
 Dans la console R
 
