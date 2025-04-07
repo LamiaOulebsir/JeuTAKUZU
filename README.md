@@ -36,3 +36,11 @@ library(JeuTAKUZU)
 
 ```r
 run_app()
+```
+
+
+## Licence
+
+Ce package est sous licence MIT.  
+Consultez le fichier [LICENSE](LICENSE) pour plus d'informations.
+
