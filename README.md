@@ -40,8 +40,8 @@ run_app()
 
 
 ## Auteurs
-- Lamia Oulebsir
-- Naima Radouan
+- [Lamia Oulebsir]
+- [Naima Radouan]
 
 Ce package est sous licence MIT.  
 Consultez le fichier [LICENSE](LICENSE) pour plus d'informations.
