@@ -1,28 +1,6 @@
 library(shiny)
 library(shinythemes)
 
-# Fonction pour vérifier les doublons de lignes ou colonnes
-check_uniqueness <- function(mat) {
-  rows_unique <- length(unique(apply(mat, 1, paste, collapse = ""))) == nrow(mat)
-  cols_unique <- length(unique(apply(mat, 2, paste, collapse = ""))) == ncol(mat)
-  return(rows_unique && cols_unique)
-}
-
-# Fonction pour vérifier les 0 ou 1 consécutifs (pas plus de 2)
-check_consecutive <- function(mat, n) {
-  check_line <- function(line) {
-    !grepl("000|111", paste(line, collapse = ""))
-  }
-  all(apply(mat, 1, check_line)) && all(apply(mat, 2, check_line))
-}
-
-# Fonction pour vérifier l'équilibre 0/1 dans chaque ligne et colonne
-check_balance <- function(mat, n) {
-  check_line <- function(line) {
-    sum(line == 0) == n / 2 && sum(line == 1) == n / 2
-  }
-  all(apply(mat, 1, check_line)) && all(apply(mat, 2, check_line))
-}
 
 # UI Shiny
 ui <- fluidPage(
@@ -30,7 +8,7 @@ ui <- fluidPage(
   titlePanel("🧠 Jeu Takuzu"),
   sidebarLayout(
     sidebarPanel(
-      numericInput("n", "Taille de la grille", 6, min = 4, max = 10),
+      numericInput("n", "Taille de la grille", 4, min = 4, max = 6),
       actionButton("start", "Démarrer le jeu 🚀", icon = icon("play"), class = "btn-success"),
       actionButton("Check", "Vérifier les règles ✅", class = "btn-primary"),
       actionButton("rules", "Règles du jeu 📖", class = "btn-info")
@@ -101,7 +79,7 @@ server <- function(input, output, session) {
       check_result <- list(
         consecutive = check_consecutive(mat, n),
         balance = check_balance(mat, n),
-        uniqueness = check_uniqueness(mat)
+        no_repeated = check_no_repeated(mat,n)
       )
 
       if (all(unlist(check_result))) {
@@ -111,7 +89,7 @@ server <- function(input, output, session) {
         msg <- "❌ Règles non respectées :"
         if (!check_result$consecutive) msg <- paste0(msg, "\n⚠️ Pas plus de deux 0 ou 1 consécutifs.")
         if (!check_result$balance) msg <- paste0(msg, "\n⚖️ Nombre égal de 0 et 1 non respecté.")
-        if (!check_result$uniqueness) msg <- paste0(msg, "\n🔁 Lignes ou colonnes identiques détectées.")
+        if (!check_result$no_repeated) msg <- paste0(msg, "\n🔁 Lignes ou colonnes identiques détectées.")
 
         showNotification(msg, type = "error", duration = 10)
         output$result <- renderText(msg)
