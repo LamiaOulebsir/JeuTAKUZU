@@ -8,9 +8,9 @@ ui <- fluidPage(
   titlePanel("🧠 Jeu Takuzu"),
   sidebarLayout(
     sidebarPanel(
-      numericInput("n", "Taille de la grille", 4, min = 4, max = 6),
+      numericInput("n", "Taille de la grille",  4, min = 4, max = 6),
       actionButton("start", "Démarrer le jeu 🚀", icon = icon("play"), class = "btn-success"),
-      actionButton("Check", "Vérifier les règles ✅", class = "btn-primary"),
+      actionButton("Check", "Vérifier ✅", class = "btn-primary"),
       actionButton("rules", "Règles du jeu 📖", class = "btn-info")
     ),
     mainPanel(
