@@ -37,7 +37,7 @@ library(JeuTAKUZU)
 ```r
 run_app()
 ```
-Ou, allez dans le dossier inst/app , allez dans le fichier app.R et cliquez sur le bouton Run App!
+Ou, aller dans le dossier inst/app , puis le fichier app.R et cliquer sur le bouton Run App !
 
 
 ## Auteurs
