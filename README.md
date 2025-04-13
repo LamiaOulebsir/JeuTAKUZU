@@ -26,7 +26,7 @@ install.packages(c("shiny", "shinyjs"))
 ```
 
 ### Charger la librairie
-Dans la console R
+Dans la console R, se positionner dans le répertoire du dépôt cloné. Ensuite charger la librairie.
 
 ```r
 library(JeuTAKUZU)
