@@ -7,7 +7,7 @@ Le jeu de Takuzu également connu sous le nom de Binairo ou Binaire,est un jeu d
 
 Exemple, passant d'une grille partiellement pré-remplie à une grille remplie :
 <div align="center">
-  <img src="JeuTAKUZU/image/takuzu.png" width="400">
+  <img src="image/takuzu.png" width="400">
 </div>
 
 
