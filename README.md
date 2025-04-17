@@ -37,6 +37,12 @@ library(JeuTAKUZU)
 ```r
 run_app()
 ```
+Si la fonction run_app() n'est pas reconnue, utiliser la commande :
+
+```r
+devtools::load_all()
+```
+
 Ou, aller dans le dossier inst/app , puis le fichier app.R et cliquer sur le bouton Run App !
 
 
